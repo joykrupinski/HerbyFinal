@@ -92,7 +92,7 @@ def main():
         
         #today = pd.to_datetime('today')
         currentDate = date.today()
-        today = currentDate.strftime('%m%d%Y')
+        today = currentDate.strftime('%m%d%y')
         toWrite = [tds, mois, light, temp, hum]
         
         df = pd.read_csv('test.csv')
