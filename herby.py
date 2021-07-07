@@ -81,8 +81,9 @@ def temp_hum_main():
 
 def main():
     
-    
+    i = 1
     while True:
+        
 
         mois,tds = moisture_tds_main()
         time.sleep(2)
@@ -90,7 +91,7 @@ def main():
         hum,temp = temp_hum_main()
         time.sleep(5)
         
-        i = 1
+    
         #today = pd.to_datetime('today')
         currentDate = date.today()
         today = currentDate.strftime('%m/%d/%y')
