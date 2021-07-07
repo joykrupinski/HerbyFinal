@@ -90,9 +90,13 @@ def main():
         hum,temp = temp_hum_main()
         time.sleep(5)
         
+        i = 1
         #today = pd.to_datetime('today')
         currentDate = date.today()
-        today = currentDate.strftime('%m%d%y')
+        today = currentDate.strftime('%m/%d/%y')
+        today = today + str(i)
+        print(today)
+        i = i + 1
         toWrite = [tds, mois, light, temp, hum]
         
         df = pd.read_csv('test.csv')
