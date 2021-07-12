@@ -11,7 +11,7 @@ import dash_bootstrap_components as dbc
 
 
 #the following code was written following the tutorial "Create Interactive Dashboard in Python from scratch | 
-#Vizualization | DASH | PLOTLY" by Data Science with Raghav  (https://www.youtube.com/watch?v=Y5-Rmdcd6MQ&t=370s)
+#Vizualization | DASH | PLOTLY" by Data Science with Raghav (https://www.youtube.com/watch?v=Y5-Rmdcd6MQ&t=370s)
 #The code documentation for the tutorial can be found on this git repo https://github.com/raaga500/YTshared/blob/master/V5_CovidDashboard-World.ipynb
 
 #read in Data
