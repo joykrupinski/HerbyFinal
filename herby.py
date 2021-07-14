@@ -81,7 +81,6 @@ def temp_hum_main():
 
 def main():
     
-    i = 1
     while True:
         
 
@@ -89,21 +88,17 @@ def main():
         time.sleep(2)
         light = Light_main()
         hum,temp = temp_hum_main()
-        time.sleep(5)
         
     
         #today = pd.to_datetime('today')
         currentDate = date.today()
         today = currentDate.strftime('%m/%d/%y')
-        today = today + str(i)
-        print(today)
-        i = i + 1
         toWrite = [tds, mois, light, temp, hum]
         
         df = pd.read_csv('test.csv')
         df[today] = toWrite
         df.to_csv('test.csv', index=False)
-
+        time.sleep(86400)
         
 
 if __name__ == '__main__':
