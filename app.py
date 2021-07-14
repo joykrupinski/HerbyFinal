@@ -258,7 +258,7 @@ def color_condition(sensor, card_value):
             color = "danger"
 
     if(sensor == 'Humidity'):
-        if(card_value <= 70 and card_value >= 30):
+        if(card_value <= 85 and card_value >= 45):
             color = "success"
         else:
             color = "danger"
