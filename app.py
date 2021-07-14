@@ -55,7 +55,7 @@ def fig_sensor_trend(sensor='Temperature',window=3):
     df.head(10)
     if window==1:
         yaxis_title = "Value for {}".format(sensor)
-        fig = px.scatter(df, y= df.columns ,x= df.index, title='Here\'s how your {} levels have been doing over time...'.format(sensor),height=600,color_discrete_sequence =['#0B3B17'])
+        fig = px.scatter(df, y= df.columns ,x= df.index, title='Take a closer look at the {} levels.'.format(sensor),height=600,color_discrete_sequence =['#0B3B17'])
     else:
         yaxis_title = "Value over the last {} days".format(window) 
         fig = px.line(df, y= df.columns ,x= df.index, title='Here\'s how your {} levels have been doing over time...'.format(sensor),height=600,color_discrete_sequence =['#0B3B17'])
@@ -109,7 +109,7 @@ def get_sub_page_heading():
 
 #footer
 def get_page_footer_head_title():
-    return html.H1(children='Want to know more? Here\'s how you can build your own HERBY at home. Visit our git repo for all the code documentation you\'ll need.',
+    return html.H1(children='Want to know more? Visit our git repo for a step by step guide and all the code documentation you\'ll need to build your own HERBY!.',
                                         style={
                                                 'margin-top': '20px',
                                                 'textAlign': 'center',
@@ -214,8 +214,8 @@ def graph1():
 
 #generate cards with last value of sensor and range
 def generate_card_content(card_header,card_value,overall_value):
-    card_head_style = {'textAlign':'center','fontSize':'200%'}
-    card_body_style = {'textAlign':'center','fontSize':'200%'}
+    card_head_style = {'textAlign':'center','fontSize':'180%'}
+    card_body_style = {'textAlign':'center','fontSize':'190%'}
     card_header = dbc.CardHeader(card_header,style=card_head_style)
     card_body = dbc.CardBody(
         [
