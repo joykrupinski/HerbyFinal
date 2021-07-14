@@ -11,7 +11,7 @@ import dash_bootstrap_components as dbc
 
 
 #the following code was written following the tutorial "Create Interactive Dashboard in Python from scratch | 
-#Vizualization | DASH | PLOTLY" by Data Science with Raghav (https://www.youtube.com/watch?v=Y5-Rmdcd6MQ&t=370s)
+#Vizualization | DASH | PLOTLY" by Data Science with Raghav  (https://www.youtube.com/watch?v=Y5-Rmdcd6MQ&t=370s)
 #The code documentation for the tutorial can be found on this git repo https://github.com/raaga500/YTshared/blob/master/V5_CovidDashboard-World.ipynb
 
 #read in Data
@@ -36,7 +36,7 @@ def get_sensor_total(sensor='Temperature'):
         return "18C - 25C"
     elif(sensor=='Moisture'): 
         return "250 - 500"
-    elif(sensor=='TDC'): 
+    elif(sensor=='TDS'): 
         return  "400 - 800"
     elif(sensor=='Light'): 
         return "500 - 1000"
@@ -251,7 +251,7 @@ def color_condition(sensor, card_value):
         else:
             color = "danger"
 
-    if(sensor == 'TDC'):
+    if(sensor == 'TDS'):
         if(card_value <= 800 and card_value >=400):
             color = "success"
         else:
@@ -274,7 +274,7 @@ def generate_cards(sensor='Temperature'):
                     dbc.Col(dbc.Card(generate_card_content("Temperature",get_sensor_value(data_sensors_ts,'Temperature'),get_sensor_total('Temperature')), color = color_condition('Temperature',get_sensor_value(data_sensors_ts,'Temperature')), inverse=True),md=dict(size=2,offset=1)),
                     dbc.Col(dbc.Card(generate_card_content("Moisture",get_sensor_value(data_sensors_ts,'Moisture'),get_sensor_total('Moisture')), color = color_condition('Moisture',get_sensor_value(data_sensors_ts,'Moisture')), inverse=True),md=dict(size=2)),
                     dbc.Col(dbc.Card(generate_card_content("Light",get_sensor_value(data_sensors_ts,'Light'),get_sensor_total('Light')), color = color_condition('Light',get_sensor_value(data_sensors_ts,'Light')), inverse=True),md=dict(size=2)),
-                    dbc.Col(dbc.Card(generate_card_content("Nutrients",get_sensor_value(data_sensors_ts,'TDC'),get_sensor_total('TDC')), color = color_condition('TDC',get_sensor_value(data_sensors_ts,'TDC')), inverse=True),md=dict(size=2)),
+                    dbc.Col(dbc.Card(generate_card_content("Nutrients",get_sensor_value(data_sensors_ts,'TDS'),get_sensor_total('TDS')), color = color_condition('TDS',get_sensor_value(data_sensors_ts,'TDS')), inverse=True),md=dict(size=2)),
                     dbc.Col(dbc.Card(generate_card_content("Humidity",get_sensor_value(data_sensors_ts,'Humidity'),get_sensor_total('Humidity')), color = color_condition('Humidity',get_sensor_value(data_sensors_ts,'Humidity')), inverse=True),md=dict(size=2)),
                 ],
                 className="mb-5",
