@@ -109,7 +109,7 @@ def get_sub_page_heading():
 
 #footer
 def get_page_footer_head_title():
-    return html.H1(children='Want to know more? Visit our git repo for a step by step guide and all the code documentation you\'ll need to build your own HERBY!.',
+    return html.H1(children='Want to know more? Visit our git repo for a step by step guide and all the code documentation you\'ll need to build your own HERBY.',
                                         style={
                                                 'margin-top': '20px',
                                                 'textAlign': 'center',
