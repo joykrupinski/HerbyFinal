@@ -41,7 +41,7 @@ def get_sensor_total(sensor='Temperature'):
     elif(sensor=='Light'): 
         return "500 - 1000"
     elif(sensor=='Humidity'): 
-        return "30 - 70"
+        return "45 - 85"
     else:
         return "Error"
 
