@@ -240,7 +240,7 @@ def color_condition(sensor, card_value):
             color = "danger"
 
     if(sensor == 'Moisture'):
-        if(card_value <= 1000 and card_value >= 2000):
+        if(card_value >= 1000 and card_value <= 2000):
             color = "success"
         else:
             color = "danger"
