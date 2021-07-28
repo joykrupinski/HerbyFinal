@@ -35,7 +35,7 @@ def get_sensor_total(sensor='Temperature'):
     if(sensor=='Temperature'): 
         return "18C - 25C"
     elif(sensor=='Moisture'): 
-        return "250 - 500"
+        return "1000 - 2000"
     elif(sensor=='TDS'): 
         return  "400 - 800"
     elif(sensor=='Light'): 
@@ -240,7 +240,7 @@ def color_condition(sensor, card_value):
             color = "danger"
 
     if(sensor == 'Moisture'):
-        if(card_value <= 500 and card_value >= 250):
+        if(card_value <= 1000 and card_value >= 2000):
             color = "success"
         else:
             color = "danger"
