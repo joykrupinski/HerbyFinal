@@ -69,8 +69,8 @@ def temp_hum_main():
         #print values on display
         lcd.setCursor(0,0)
         lcd.write('temperature: {0:2}C'.format(temp))
-        lcd.setCursor(1,0)
-        lcd.write('humidity: {0:5}%'.format(humi))
+        #lcd.setCursor(1,0)
+        #lcd.write('humidity: {0:5}%'.format(humi))
         
         return humi,temp
         
