@@ -40,8 +40,6 @@ def get_sensor_total(sensor='Temperature'):
         return  "400 - 800"
     elif(sensor=='Light'): 
         return "500 - 1000"
-    elif(sensor=='Humidity'): 
-        return "45 - 85"
     else:
         return "Error"
 
@@ -257,12 +255,6 @@ def color_condition(sensor, card_value):
         else:
             color = "danger"
 
-    if(sensor == 'Humidity'):
-        if(card_value <= 85 and card_value >= 45):
-            color = "success"
-        else:
-            color = "danger"
-
     return color
 
 #create cards and call value functions
@@ -275,7 +267,6 @@ def generate_cards(sensor='Temperature'):
                     dbc.Col(dbc.Card(generate_card_content("Moisture",get_sensor_value(data_sensors_ts,'Moisture'),get_sensor_total('Moisture')), color = color_condition('Moisture',get_sensor_value(data_sensors_ts,'Moisture')), inverse=True),md=dict(size=2)),
                     dbc.Col(dbc.Card(generate_card_content("Light",get_sensor_value(data_sensors_ts,'Light'),get_sensor_total('Light')), color = color_condition('Light',get_sensor_value(data_sensors_ts,'Light')), inverse=True),md=dict(size=2)),
                     dbc.Col(dbc.Card(generate_card_content("Nutrients",get_sensor_value(data_sensors_ts,'TDS'),get_sensor_total('TDS')), color = color_condition('TDS',get_sensor_value(data_sensors_ts,'TDS')), inverse=True),md=dict(size=2)),
-                    dbc.Col(dbc.Card(generate_card_content("Humidity",get_sensor_value(data_sensors_ts,'Humidity'),get_sensor_total('Humidity')), color = color_condition('Humidity',get_sensor_value(data_sensors_ts,'Humidity')), inverse=True),md=dict(size=2)),
                 ],
                 className="mb-5",
             ),
