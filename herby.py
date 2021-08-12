@@ -16,7 +16,7 @@ from TDS import GroveTDS
 #Light import
 from grove.grove_light_sensor_v1_2 import GroveLightSensor
 
-#humidity and temperature import
+#temperature import
 from seeed_dht import DHT
 
 #import for csv file
@@ -54,8 +54,8 @@ def Light_main():
         
         return sensor.light
         
-#temperature and humidity
-def temp_hum_main():
+#temperature 
+def temp_main():
         #display
         lcd = JHD1802()
         #find correct port in base hat
@@ -69,10 +69,8 @@ def temp_hum_main():
         #print values on display
         lcd.setCursor(0,0)
         lcd.write('temperature: {0:2}C'.format(temp))
-        #lcd.setCursor(1,0)
-        #lcd.write('humidity: {0:5}%'.format(humi))
         
-        return humi,temp
+        return temp
         
 #main functions calls all sensor functions and writes values in csv file 
 def main():
@@ -82,12 +80,12 @@ def main():
         #call all sensors
         mois,tds = moisture_tds_main()
         light = Light_main()
-        hum,temp = temp_hum_main()
+        temp = temp_main()
         
         #get current date in correct format and write all sensor values in file with according date
         currentDate = date.today()
         today = currentDate.strftime('%m/%d/%y')
-        toWrite = [tds, mois, light, temp, hum]
+        toWrite = [tds, mois, light, temp]
         #create data frame 
         df = pd.read_csv('test.csv')
         df[today] = toWrite
