@@ -263,7 +263,7 @@ def generate_cards(sensor='Temperature'):
         [
             dbc.Row(
                 [
-                    dbc.Col(dbc.Card(generate_card_content("Temperature",get_sensor_value(data_sensors_ts,'Temperature'),get_sensor_total('Temperature')), color = color_condition('Temperature',get_sensor_value(data_sensors_ts,'Temperature')), inverse=True),md=dict(size=2,offset=1)),
+                    dbc.Col(dbc.Card(generate_card_content("Temperature",get_sensor_value(data_sensors_ts,'Temperature'),get_sensor_total('Temperature')), color = color_condition('Temperature',get_sensor_value(data_sensors_ts,'Temperature')), inverse=True),md=dict(size=2,offset=3)),
                     dbc.Col(dbc.Card(generate_card_content("Moisture",get_sensor_value(data_sensors_ts,'Moisture'),get_sensor_total('Moisture')), color = color_condition('Moisture',get_sensor_value(data_sensors_ts,'Moisture')), inverse=True),md=dict(size=2)),
                     dbc.Col(dbc.Card(generate_card_content("Light",get_sensor_value(data_sensors_ts,'Light'),get_sensor_total('Light')), color = color_condition('Light',get_sensor_value(data_sensors_ts,'Light')), inverse=True),md=dict(size=2)),
                     dbc.Col(dbc.Card(generate_card_content("Nutrients",get_sensor_value(data_sensors_ts,'TDS'),get_sensor_total('TDS')), color = color_condition('TDS',get_sensor_value(data_sensors_ts,'TDS')), inverse=True),md=dict(size=2)),
